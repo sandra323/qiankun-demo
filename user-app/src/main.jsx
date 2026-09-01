@@ -19,8 +19,9 @@ function render(props = {}) {
   root.render(
     <React.StrictMode>
       <App
-        userName={props.userName}
         onChildMessage={props.onChildMessage}
+        onGlobalStateChange={props.onGlobalStateChange}
+        setGlobalState={props.setGlobalState}
       />
     </React.StrictMode>
   )

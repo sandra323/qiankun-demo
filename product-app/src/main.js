@@ -12,8 +12,9 @@ function render(props = {}) {
     : document.querySelector('#root')
 
   app = createApp(App, {
-    userName: props.userName,
     onChildMessage: props.onChildMessage,
+    onGlobalStateChange: props.onGlobalStateChange,
+    setGlobalState: props.setGlobalState,
   })
 
   app.mount(mountNode)
