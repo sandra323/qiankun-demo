@@ -11,7 +11,10 @@ function render(props = {}) {
     ? container.querySelector('#root')
     : document.querySelector('#root')
 
-  app = createApp(App)
+  app = createApp(App, {
+    userName: props.userName,
+    onChildMessage: props.onChildMessage,
+  })
 
   app.mount(mountNode)
 }

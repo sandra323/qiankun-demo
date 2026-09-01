@@ -18,7 +18,10 @@ function render(props = {}) {
 
   root.render(
     <React.StrictMode>
-      <App />
+      <App
+        userName={props.userName}
+        onChildMessage={props.onChildMessage}
+      />
     </React.StrictMode>
   )
 }
@@ -37,7 +40,7 @@ export async function mount(props) {
 export async function unmount() {
   console.log('🔴 unmount 开始')
 
-  root.unmount()
+  root?.unmount()
   root = null
 
   console.log('🔴 unmount 完成')

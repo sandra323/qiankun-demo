@@ -1,8 +1,26 @@
+<script setup>
+defineProps({
+  userName: {
+    type: String,
+    default: '',
+  },
+  onChildMessage: {
+    type: Function,
+    default: undefined,
+  },
+})
+</script>
+
 <template>
   <div class="product-app">
     <h1>🛒 商品中心</h1>
 
+    <h2>你好，{{ userName }}</h2>
     <p>技术栈：Vue 3</p>
+
+    <button @click="onChildMessage?.('你好，我是 Vue 子应用')">
+      给主应用发消息
+    </button>
 
     <div class="product">
       <h2>MacBook Pro</h2>
